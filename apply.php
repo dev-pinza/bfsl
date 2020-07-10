@@ -399,23 +399,23 @@ include("header.php");
                 <label for="file-form">Foundation</label>
                 <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" name="bsc" id="inlineCheckbox1" value="1"> Bsc (Bachelor)
+                    <input type="checkbox" name="bsc" id="inlineCheckbox1" value="yes"> Bsc (Bachelor)
                   </label>
                   <label class="checkbox-inline">
-                    <input type="checkbox" name="msc" id="inlineCheckbox2" value="1"> Msc (Masters)
+                    <input type="checkbox" name="msc" id="inlineCheckbox2" value="yes"> Msc (Masters)
                   </label>
                   <label class="checkbox-inline">
-                    <input type="checkbox" name="phd" id="inlineCheckbox3" value="1"> Phd (Doctor of Philosophy)
+                    <input type="checkbox" name="phd" id="inlineCheckbox3" value="yes"> Phd (Doctor of Philosophy)
                   </label>
                 </div>
                 <div class="form-group">
                 <label for="file-form">Distance Learning</label>
                 <br>
                   <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="1"> Yes
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="yes"> Yes
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="0"> No
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="no"> No
                   </label>
                 </div>
                 <div class="form-group">
