@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="shortcut icon" href="image/logo/favico.ico">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="assets/styles/vendor/bootstrap.min.css">
         <!-- Fonts -->
@@ -59,7 +59,7 @@
             </button>
             <!-- Logo -->
             <!-- LOGO -->
-            <a class="navbar-brand" href="index.php"><img src="assets/images/" alt="BFSL - Logo"></a>
+            <a class="navbar-brand" href="index.php"><img src="image/logo/logo3.png" alt="BFSL - Logo" height="50px" width="50px"></a>
           </div>
 
           <!-- Navbar Links -->

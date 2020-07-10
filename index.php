@@ -16,7 +16,7 @@ include("header.php");
             <div class="hero-content-wrapper">
               <div class="hero-content">
                 
-                <h1 class="hero-lead wow fadeInLeft" data-wow-duration="1.5s">Byola-Femzy<br> Services limited</h1>
+                <h1 class="hero-lead wow fadeInLeft" data-wow-duration="1.5s">Byolafemzy<br> Services limited</h1>
                 <h4 class="h-alt hero-subheading wow fadeIn" data-wow-duration="2s" data-wow-delay=".7s">Achieve your Dream &amp; Make The World better</h4>
                 <a href="apply.php" class="btn btn-light wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">Apply Now</a>
 
@@ -237,7 +237,7 @@ include("header.php");
               <div class="hero-content-wrapper">
                 <div class="hero-content">
                   
-                  <!-- <img src="assets/images/hero/ag2-logo.png" alt="Creative Agency Template"> -->
+                  <img src="image/logo/logo3.png" alt="BFSL" height="200px" width="200px">
                   <h1 class="hero-lead">STUDY ABROAD</h1>
                   <h4 class="h-alt hero-secondary">Build Your Dream with Us</h4>
                   <a href="#test" class="btn btn-light">Testimonials</a>
