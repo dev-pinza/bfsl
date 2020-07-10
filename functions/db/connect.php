@@ -1,9 +1,9 @@
 <?php
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'sekanisy');
-define('DB_PASSWORD', '4r6WY#JP+rnl67');
+define('DB_USERNAME', 'bfslcom_apply');
+define('DB_PASSWORD', 'Apply633#@');
 define('DB_CHARSET', 'utf8');
-define('DB_NAME', 'bfsl');
+define('DB_NAME', 'bfslcom_bfsl');
 // test
 // define('DB_SERVER', 'localhost');
 // define('DB_USERNAME', 'root');
