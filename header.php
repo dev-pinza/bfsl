@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-    <!-- <script src="//code.tidio.co/0uf1j8mjoltxkgvf0oeykn1ves9iob3j.js" async></script> -->
+    <script src="//code.tidio.co/0uf1j8mjoltxkgvf0oeykn1ves9iob3j.js" async></script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>BFSL | Welcome</title>
