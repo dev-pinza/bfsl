@@ -13,8 +13,17 @@ $city = $_POST["city"];
 $country = $_POST["country"];
 $zip = $_POST["zip"];
 $bsc = $_POST["bsc"];
+if ($bsc == "") {
+    $bsc = "No";
+}
 $msc = $_POST["msc"];
+if ($msc == "") {
+    $msc = "No";
+}
 $phd = $_POST["phd"];
+if ($phd == "") {
+    $phd = "No";
+}
 $distance = $_POST["inlineRadioOptions"];
 $yoe = $_POST["yoe"];
 $qualification = $_POST["qualification"];
@@ -23,7 +32,17 @@ $course = $_POST["course"];
 $study_country = $_POST["study_country"];
 $school = $_POST["school"];
 $add_info = $_POST["add_info"];
+if ($add_info == "") {
+    $add_info = "No Additional Information";
+}
 $question = $_POST["question"];
+if ($zip == "") {
+    $zip = "No Question";
+}
+// REGISTRATION NUMBER
+$digits = 6;
+$randms = str_pad(rand(0, pow(10, $digits)-1), $digits, '0', STR_PAD_LEFT);
+$reg_no = "REG".$randms.$email;
 // DATE AND TIME
 $gen_date = date('Y-m-d');
 $gen_time = date('H:i:s');
@@ -36,8 +55,8 @@ session_start();
 $select_first = mysqli_query($connection, "SELECT * FROM `application` WHERE email = '$email' OR phone = '$phone'");
 $x = mysqli_num_rows($select_first);
 if ($x <= 0 ) {
-    $insert_apply = mysqli_query($connection, "INSERT INTO `application` (`date_created`, `time`, `firstname`, `middlename`, `lastname`, `email`, `phone`, `address`, `city`, `country`, `zip`, `bsc`, `msc`, `phd`, `distance`, `year_of_entry`, `qualification`, `entry_term`, `course`, `study_country`, `university`, `add_info`, `question`) 
-VALUES ('{$gen_date}', '{$gen_time}', '{$fname}', '{$mname}', '{$lname}', '{$email}', '{$phone}', '{$address}', '{$city}', '{$country}', '{$zip}', '{$bsc}', '{$msc}', '{$phd}', '$distance', '{$yoe}', '{$qualification}', '{$entry_term}', '{$course}', '{$study_country}', '{$school}', '{$add_info}', '{$question}')");
+    $insert_apply = mysqli_query($connection, "INSERT INTO `application` (`reg_no`, `date_created`, `time`, `firstname`, `middlename`, `lastname`, `email`, `phone`, `address`, `city`, `country`, `zip`, `bsc`, `msc`, `phd`, `distance`, `year_of_entry`, `qualification`, `entry_term`, `course`, `study_country`, `university`, `add_info`, `question`) 
+VALUES ('{$reg_no}', '{$gen_date}', '{$gen_time}', '{$fname}', '{$mname}', '{$lname}', '{$email}', '{$phone}', '{$address}', '{$city}', '{$country}', '{$zip}', '{$bsc}', '{$msc}', '{$phd}', '$distance', '{$yoe}', '{$qualification}', '{$entry_term}', '{$course}', '{$study_country}', '{$school}', '{$add_info}', '{$question}')");
 if ($insert_apply) {
     // echo header for something
     $_SESSION["type"] = "success";
@@ -59,7 +78,7 @@ if ($insert_apply) {
       // $mail->addBCC("bcc@example.com");
       // Send HTML or Plain Text Email
       $mail->isHTML(true);
-      $mail->Subject = "BFSL Registration Successful";
+      $mail->Subject = "BFSL Registration Successful $reg_no";
       $mail->Body = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
       <html dir='ltr' xmlns='http://www.w3.org/1999/xhtml'>
       
@@ -95,6 +114,7 @@ if ($insert_apply) {
                                   <td>
                                       <p>Submitted Date <b>$gen_date</b></p>
                                       <p>$fname $mname $lname We will get back to you soon!</p>
+                                      <p>Your Registration No. $reg_no</p>
                                       <center>
                                           <a href='https://bfsl633.com' style='display: inline-block; padding: 11px 30px; margin: 20px 0px 30px; font-size: 15px; color: #fff; background: #4fc3f7; border-radius: 60px; text-decoration:none;'>Explore</a>
                                       </center>
@@ -170,9 +190,9 @@ if ($insert_apply) {
                           <tbody>
                               <tr>
                                   <td><b>$fname $lname</b>
-                                      <p style='margin-top:0px;'>$gen_time</p>
+                                      <p style='margin-top:0px;'>Reg no: $reg_no</p>
                                   </td>
-                                  <td align='right' width='100'> $gen_date </td>
+                                  <td align='right' width='100'> Date: $gen_date | Time: $gen_time </td>
                               </tr>
                               <tr>
                                   <td colspan='2' style='padding:20px 0; border-top:1px solid #f6f6f6;'>
