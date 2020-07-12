@@ -9,7 +9,6 @@ include("header.php");
           <div id="fw-video-one-bg" class="player" 
                data-property="{videoURL:'http://youtu.be/Scxs7L0vhZ4',containment:'.fw-video-hero',autoPlay:true, mute:true, startAt:71, stopAt:300, opacity:1}">
           </div>
-
           <div class="bg-overlay">
                             
             <!-- Hero Content -->

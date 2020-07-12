@@ -3,29 +3,35 @@ include("header.php");
 ?>
 <!-- NOW WE WILL START -->
 <!-- ========== Page Title ========== -->
- <!-- ========== Hero Cover ========== -->
-
- <div id="home" class="freelancer-hero">
+<div id="home" class="agency2-hero">
           <div class="bg-overlay">
-            <!-- Hero Content -->
-            <div class="hero-content-wrapper">
-              <div class="hero-content">
-                
-                <h4 class="h-alt hero-subheading wow fadeIn" data-wow-duration="2s" data-wow-delay=".7s">BFSL - Application</h4>
-                <h1 class="hero-lead wow fadeInUp" data-wow-duration="1.5s">Application</h1>
-                <a href="#appn" target="_blank" class="btn btn-light btn-small wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">Apply</a>
+            
+            <div id="large-header" class="large-header">
+              <canvas id="demo-canvas" class="demo-canvas"></canvas>
 
-              </div>
-            </div>
+              <!-- Hero Content -->
+              <div class="hero-content-wrapper">
+                <div class="hero-content">
+                  
+                  <img src="image/logo/logo3.png" height="150px" width="150px" alt="Application">
+                  <h1 class="hero-lead">BFSL</h1>
+                  <h4 class="h-alt hero-secondary">Application Portal</h4>
+                  <a href="#appn" class="btn btn-light">Apply Now</a>
+                  
+                  <!-- Scroller -->
+                  <a href="#services" class="scroller">
+                    <span class="scroller-text">scroll down</span>
+                    <span class="linea-basic-magic-mouse"></span>
+                  </a>
 
-            <!-- Scroller -->
-            <a href="#services" class="scroller">
-              <span class="scroller-text">scroll down</span>
-              <span class="linea-basic-magic-mouse"></span>
-            </a>
+                </div><!-- / .hero-content -->
+              </div><!-- / .hero-content-wrapper -->
+
+            </div><!-- / #large-header -->
 
           </div><!-- / .bg-overlay -->
-        </div><!-- / .main-hero-2 -->
+        </div><!-- / #home -->
+ <!-- ========== Hero Cover ========== -->
 
         <!-- a new place for instruction -->
 

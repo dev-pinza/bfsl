@@ -40,7 +40,9 @@
                 <!-- Show Info Button -->
                 <a href="#" class="show-info-link"><i class="fa fa-info"></i>Show info</a>
 
-                <div id="map-canvas" class="footer-map"></div>
+                <div class="footer-map">
+                <iframe width=100% height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=zone%203%2C%203%20Conakry%20St%2C%20Wuse%2C%20Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
 
                 <address class="contact-info-wrapper">
                   <ul>
