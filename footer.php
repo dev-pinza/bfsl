@@ -6,10 +6,10 @@
 
               <h3 class="cta-lead h-alt wow fadeIn" data-wow-delay=".1s" data-wow-duration="1s">Join our newsletter</h3>
 
-              <form class="mc-ajax mc-form subscribe-form" _lpchecked="1">
+              <form method="POST" class="mc-ajax mc-form subscribe-form" _lpchecked="1">
 
                 <!-- Email -->
-                <input type="email" name="EMAIL" placeholder="Your email address" id="mc-email" class="wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s" >
+                <input type="email" name="email" placeholder="Your email address" id="mc-email" class="wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s" >
                 
                 <!-- Send Button -->
                 <input type="submit" name="subscribe" value="Join Us" class="btn btn-light btn-large wow fadeInUp mc-send-btn" data-wow-delay=".1s" data-wow-duration="1s">
@@ -41,7 +41,7 @@
                 <a href="#" class="show-info-link"><i class="fa fa-info"></i>Show info</a>
 
                 <div class="footer-map">
-                <iframe width=100% height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=zone%203%2C%203%20Conakry%20St%2C%20Wuse%2C%20Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <iframe width=100% height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=Suite%204%2C%20Louisiana%202%20Shopping%20Plaza%2C%20Opposite%20Valencia%20Garden%20Estate%2C%20Close%20to%20Sunnyvale%20Homes%2C%20Dakwo%20District%2C%20Locogoma%2C%20Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div>
 
                 <address class="contact-info-wrapper">
@@ -49,7 +49,7 @@
                     <!-- Address -->
                     <li class="contact-group">
                       <span class="adr-heading">Address</span>
-                      <span class="adr-info">3, Conackry street, Wuse zone 3, Abuja</span>
+                      <span class="adr-info">Suite 4, Louisiana 2 Shopping Plaza, Opposite Valencia Garden Estate, Close to Sunnyvale Homes, Dakwo District, Locogoma, Abuja.</span>
                     </li>
                     <!-- Email -->
                     <li class="contact-group">

@@ -1,102 +1,100 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Coming soon</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+include("header.php");
+?>
+<div id="home" class="agency2-hero">
+          <div class="bg-overlay">
+            
+            <div id="large-header" class="large-header">
+              <canvas id="demo-canvas" class="demo-canvas"></canvas>
 
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/styles/vendor/bootstrap.min.css">
-        <!-- Fonts -->
-        <link rel="stylesheet" href="assets/fonts/et-lineicons/css/style.css">
-        <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
-        <!-- Slider -->
-        <link rel="stylesheet" href="assets/styles/vendor/slick.css">
-        <!-- Lightbox -->
-        <link rel="stylesheet" href="assets/styles/vendor/magnific-popup.css">
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="assets/styles/vendor/animate.css">
+              <!-- Hero Content -->
+              <div class="hero-content-wrapper">
+                <div class="hero-content">
+                  
+                  <img src="image/logo/logo3.png" height="150px" width="150px" alt="Application">
+                  <h1 class="hero-lead">BFSL</h1>
+                  <h4 class="h-alt hero-secondary">Blog & News</h4>
+                  <a href="#blog" class="btn btn-light">View Post</a>
+                  <!-- Scroller -->
+                  <a href="#blog" class="scroller">
+                    <span class="scroller-text">scroll down</span>
+                    <span class="linea-basic-magic-mouse"></span>
+                  </a>
+
+                </div><!-- / .hero-content -->
+              </div><!-- / .hero-content-wrapper -->
+
+            </div><!-- / #large-header -->
+
+          </div><!-- / .bg-overlay -->
+        </div><!-- / #home -->
 
 
-        <!-- Definity CSS -->
-        <link rel="stylesheet" href="assets/styles/main.css">
-        <link rel="stylesheet" href="assets/styles/responsive.css">
-
-        <!-- JS -->
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
+        <!-- ========== Blog - 3 Columns ========== -->
         
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <div id="blog" class="section container blog-columns blog-masonry">
+          <div class="row">
+
+            <div class="col-md-8">
+              <div class="blog-container">
+
+                <!-- Blog Post 1 -->
+                <?php 
+                include("functions/db/connect.php");
+                $select_blog = mysqli_query($connection, "SELECT * FROM blog");
+                while ($row = mysqli_fetch_array($select_blog)) {
+                  ?>
+                  <div class="col-lg-8 blog-selector">
+                  <div class="blog-post wow fadeIn" data-wow-delay=".1s" data-wow-duration="2s">
+
+                    <!-- Image -->
+                    <a href="blog-post.html" class="post-img"><img src="super/functions/blog/<?php echo $row["img"];?>" alt="Blog Post 1"></a>
+
+                    <div class="bp-content">
+                      
+                      <!-- Meta data -->
+                      <div class="post-meta">
+                        <a href="#" class="post-date">
+                          <i class="fa fa-calendar-o"></i>
+                          <span><?php echo $row["date"];?></span>
+                        </a>
+                        <a href="#" class="post-comments">
+                          <i class="fa fa-comments-o"></i>
+                          <span>12</span>
+                        </a>
+                      </div><!-- / .meta -->
+
+                      <!-- Post Title -->
+                      <a href="#" class="post-title"><h4><?php echo $row["heading"];?></h4></a>
+                      <p><?php echo $row["sub_heading"]; ?></p>
+                      <!-- Blurb -->
+                      <p><?php echo $row["content"]; ?></p>
+
+                      <!-- Link -->
+                      <!-- <a href="blog-post.html" class="btn btn-small">Read More</a> -->
+
+                    </div><!-- / .bp-content -->
+
+                  </div><!-- / .blog-post -->
+                </div><!-- / .col-lg-4 -->
+                  <?php
+                }
+                ?>
 
 
-        <!-- ========== Preloader ========== -->
-
-        <div class="preloader">
-          <img src="assets/images/loader.svg" alt="Loading...">
-        </div>
+              </div><!-- / .blog-container  -->
 
 
+              <!-- Pagination -->
 
-        <!-- ========== Coming Soon - Timer ========== -->
+            </div><!-- / col-md-8 -->
 
-        <div class="comingsoon-2">
-          <div class="content-wrapper">
+            
+            
+            <!-- ========== Sidebar ========== -->
 
-            <div class="container">
-              <div class="row">
-                
-                <div class="col-md-6">
-                  <header>
-                    <h1>Coming Soon</h1>
-                    <p>This Page will be Live soon!<br> below to get notified when is live</p>
-                  </header>
-                  <form class="mc-ajax mc-form subscribe-form" _lpchecked="1">
-                    <h5>Get notified when we are live</h5>
-                    <div class="form-group form-inline">
-                      <input type="email" name="EMAIL" placeholder="Enter your email" id="mc-email" class="form-control">
-                      <input type="submit" name="subscribe" value="Subscribe" class="btn">
-                    </div>
-
-                    <!-- Ajax message -->
-                    <div class="subscribe-result"></div>
-                  </form>
-                </div>
-
-              </div>
-            </div>
-
-          </div><!-- / .content-wrapper -->
-        </div><!-- / .comingsoon -->
-
-    
-
-        <!-- ========== Scripts ========== -->
-
-        <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/vendor/google-fonts.js"></script>
-        <script src="assets/js/vendor/jquery.easing.js"></script>
-        <script src="assets/js/vendor/jquery.waypoints.min.js"></script>
-        <script src="assets/js/vendor/bootstrap.min.js"></script>
-        <script src="assets/js/vendor/bootstrap-hover-dropdown.min.js"></script>
-        <script src="assets/js/vendor/smoothscroll.js"></script>
-        <script src="assets/js/vendor/jquery.localScroll.min.js"></script>
-        <script src="assets/js/vendor/jquery.scrollTo.min.js"></script>
-        <script src="assets/js/vendor/jquery.stellar.min.js"></script>
-        <script src="assets/js/vendor/jquery.parallax.js"></script>
-        <script src="assets/js/vendor/slick.min.js"></script>
-        <script src="assets/js/vendor/jquery.easypiechart.min.js"></script>
-        <script src="assets/js/vendor/countup.min.js"></script>
-        <script src="assets/js/vendor/isotope.min.js"></script>
-        <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/vendor/wow.min.js"></script>
-        <script src="assets/js/vendor/jquery.ajaxchimp.js"></script>
-
-        <!-- Definity JS -->
-        <script src="assets/js/main.js"></script>
-    </body>
-</html>
+          </div><!-- / .row -->          
+        </div><!-- / .container -->
+<?php
+include("footer.php");
+?>

@@ -2,15 +2,14 @@
 
 if(isset($_POST['email'])) {
  
-    include("../../functions/db/connect.php");
+    include("db/connect.php");
     // done
-    $name = $_POST["name"];
-    $msg = $_POST["message"];
-    $em = $_POST["email"];
-    $insert_eq = mysqli_query($connection, "INSERT INTO `enquiries` (`name`, `email`, `message`) VALUES ('{$name}', '{$em}', '{$msg}')");
+    $email = $_POST["email"];
+    $date = date('Y-m-d');
+    $insert_eq = mysqli_query($connection, "INSERT INTO `subscribe` (`email`, `date`) VALUES ({$email}', '{$date}')");
 
     if ($insert_eq) {
-      echo "Email Was Successful";
+      echo "Subscription Was Successful";
     } else {
       echo "GOOD";
     }
@@ -18,7 +17,7 @@ if(isset($_POST['email'])) {
  
     $email_to = "info@bfsl633.com";
  
-    $email_subject = "Contach Form";
+    $email_subject = "Blog Subscription";
  
      
  
@@ -135,7 +134,7 @@ $headers = 'From: '.$email_from."\r\n".
 
  <div class="alert alert-success alert-dismissible wow fadeInUp" role="alert">
    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-   Your message has been sent.
+   You Have Successful Subscribed.
  </div>
 
  <?php } ?>

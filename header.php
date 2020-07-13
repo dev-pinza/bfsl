@@ -70,7 +70,7 @@
               <li><a href="service.php">Services<span class="sr-only"></span></a></li>
               <li><a href="apply.php">Apply<span class="sr-only"></span></a></li>
               <!-- <li><a href="#portfolio">Portfolio<span class="sr-only"></span></a></li> -->
-              <li><a href="testy.php">Testimonials<span class="sr-only"></span></a></li>
+              <!-- <li><a href="testy.php">Testimonials<span class="sr-only"></span></a></li> -->
               <li><a href="blog.php">Blog<span class="sr-only"></span></a></li>
               <li><a href="contact.php">Contact<span class="sr-only"></span></a></li>
               <!-- <li><a href="index.html">All Demos<span class="sr-only"></span></a></li> -->

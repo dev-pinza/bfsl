@@ -42,7 +42,7 @@ include("header.php");
           <div class="contact-wrapper">
             <!-- Map -->
             <div class="gmap map-boxed">
-            <iframe width=100% height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=zone%203%2C%203%20Conakry%20St%2C%20Wuse%2C%20Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <iframe width=100% height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=Suite%204%2C%20Louisiana%202%20Shopping%20Plaza%2C%20Opposite%20Valencia%20Garden%20Estate%2C%20Close%20to%20Sunnyvale%20Homes%2C%20Dakwo%20District%2C%20Locogoma%2C%20Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
 
             <!-- Show Info Button -->
