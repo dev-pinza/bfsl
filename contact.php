@@ -101,7 +101,7 @@ include("header.php");
               
               <!-- Contact Form -->
               <div class="row">
-                <form action="../assets/contact-form/contact-form.php" method="POST" id="contact-form-1" class="form-ajax">
+                <form action="assets/contact-form/contact-form.php" method="POST" id="contact-form-1" class="form-ajax">
                   <div class="col-md-offset-2 col-md-4 wow fadeInUp" data-wow-duration="1s">
 
                     <!-- Name -->

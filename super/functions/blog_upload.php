@@ -27,7 +27,7 @@ if (isset($_POST["title"]))
 
     $post_invent = mysqli_query($connection, "INSERT INTO `blog` (`user_id`, `heading`, `sub_heading`, `content`, `date`, `comment`, `img`) VALUES ('{$user_id}', '{$title}', '{$sub_title}', '{$body}', '{$gen_date}', '0', '{$sig_passport_one}')");
     if ($post_invent) {
-      $select_id = mysqli_query($connection, "SELECT * FROM `subscribe`");
+      $select_id = mysqli_query($connection, "SELECT * FROM `enquiries`");
       while ($xy = mysqli_fetch_array($select_id))
       {
         // send mails to all newsletter guys;
