@@ -6,8 +6,7 @@ session_start();
 
 $username = $_SESSION["username"];
 $email = $_SESSION["email"];
-$usertype = $_SESSION["usertype"];
-if(!$_SESSION["usertype"] == "staff"){
+if(!$_SESSION["email"] != ""){
     header("location: ../account/index.php");
     exit;
 }
@@ -44,7 +43,7 @@ if(!$_SESSION["usertype"] == "staff"){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
-    <title>Churaton - Admin</title>
+    <title>BFSL - Admin</title>
 </head>
 
 <body>
@@ -57,7 +56,7 @@ if(!$_SESSION["usertype"] == "staff"){
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="dashboard.php" style="font-size: 12px;">Churaton Hotel</a>
+                <a class="navbar-brand" href="dashboard.php" style="font-size: 12px;">BFSL ADMIN</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -78,9 +77,9 @@ if(!$_SESSION["usertype"] == "staff"){
                                             <a href="booking_room.php" class="list-group-item list-group-item-action">
                                                 <div class="notification-info">
                                                     <!-- <div class="notification-list-user-img"><img src="../design/x2/assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div> -->
-                                                    <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                    <!-- <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
                                                         <div class="notification-date">2 min ago</div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </a>
                                         </div>
@@ -92,7 +91,7 @@ if(!$_SESSION["usertype"] == "staff"){
                             </ul>
                         </li>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="https://www.churaton.com" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://firebasestorage.googleapis.com/v0/b/churaton-6e682.appspot.com/o/logo.jpeg?alt=media&token=23d88927-590b-4dd7-aa22-2c3981267ba7" alt="" class="user-avatar-md rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="https://www.bfsl633.com" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://firebasestorage.googleapis.com/v0/b/churaton-6e682.appspot.com/o/logo3.png?alt=media&token=d4b38801-90cc-4187-bb4e-84d752a9fdfb" alt="" class="user-avatar-md rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name"> <?php echo $username; ?> </h5>
@@ -130,35 +129,32 @@ if(!$_SESSION["usertype"] == "staff"){
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard.php">Finance</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Sales Overview</a>
+                                            <a class="nav-link" href="dashboard.php">Operation Summary</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link <?php if ($avt == 'invent') { echo 'active'; }?>" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Inventory & News</a>
+                                <a class="nav-link <?php if ($avt == 'invent') { echo 'active'; }?>" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Blog & News</a>
                                 <div id="submenu-2" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="invent.php">Inventory - Property<span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="add_blog.php">Upload Blog & News<span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Blog & News</a>
+                                            <a class="nav-link" href="view_blog.php">View Blog & News</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-table"></i>Order & Booking</a>
+                                <a class="nav-link <?php if ($avt == 'app') { echo 'active'; }?>" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-table"></i>Registration</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="booking_room.php">Rooms</a>
+                                            <a class="nav-link" href="application.php">View Applicant</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="#">Resturant</a>
                                         </li>
                                         <li class="nav-item">
@@ -166,57 +162,19 @@ if(!$_SESSION["usertype"] == "staff"){
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Gym</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-chart-pie"></i>Report</a>
-                                <div id="submenu-5" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Sales Report</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Inventory Report</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Staff Activity</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Control</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-divider">
-                                Features
+                                Inbox
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>Enquiry/FAQ <span class="badge badge-secondary">New</span></a>
+                                <a class="nav-link <?php if ($avt == 'faq') { echo 'active'; }?>" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>Enquiry/FAQ <span class="badge badge-secondary">New</span></a>
                                 <div id="submenu-7" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Inbox</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">FAQ</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Vendors -Pro Upgrade</a>
-                                <div id="submenu-9" class="collapse submenu">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">MST(Map Sales Tracking)</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Flight Services</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">External Engines</a>
+                                            <a class="nav-link" href="faq.php">FAQ</a>
                                         </li>
                                     </ul>
                                 </div>

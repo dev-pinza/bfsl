@@ -68,7 +68,7 @@ include("header.php");
                       <!-- Address -->
                       <div class="col-sm-5 address-group">
                         <span>Address</span>
-                        <p>No. 3 Conackry street Wuse zone 3, Abuja
+                        <p>Suite 4, Louisiana 2 Shopping Plaza, Opposite Valencia Garden Estate, Close to Sunnyvale Homes, Dakwo District, Locogoma, Abuja.
                         </p>
                       </div>
 

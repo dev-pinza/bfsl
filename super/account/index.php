@@ -7,11 +7,11 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  if($_SESSION["usertype"] == "staff"){
+  if($_SESSION["email"] != ""){
     header("location: ../pages/dashboard.php");
     exit;
   } 
-  elseif($_SESSION["usertype"] == "admin"){
+  elseif($_SESSION["email"] != ""){
     header("location: ../pages/dashboard.php");
     exit;
   }
@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, email, user_type, password FROM users WHERE users.username = ?";
+        $sql = "SELECT id, username, email, password FROM `admin` WHERE admin.username = ?";
         // $sqlj = "SELECT users.id, users.int_id, users.username, users.fullname, users.usertype, users.password, org_role, display_name FROM staff JOIN users ON users.id = staff.user_id WHERE users.username = "sam"";
         
         if($stmt = mysqli_prepare($link, $sql)){
@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $email, $usertype, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $email, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
@@ -83,14 +83,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
                             $_SESSION["email"] = $email;
-                            $_SESSION["usertype"] = $usertype;
                             // $_SESSION["lastname"] = $lastname;
                             session_write_close();                            
                             //run a quick code to show active user
                             // Redirect user to welcome page
-                            if ($stmt->num_rows ==1 && $_SESSION["usertype"] =="staff") {
+                            if ($stmt->num_rows ==1 && $_SESSION["email"] !="") {
                               header("location: ../pages/dashboard.php");
-                            }elseif ($stmt->num_rows ==1 && $_SESSION["usertype"]=="staff"){
+                            }elseif ($stmt->num_rows ==1 && $_SESSION["email"] !=""){
                                 header("location: ../pages/dashboard.php");
                             //   header("location: ./mfi/admin/dashboard.php");
                             }
@@ -281,7 +280,7 @@ $outxxx = "";
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="#"><img class="logo-img" height="40" width="50" src="../img/logo/logo.jpeg" alt="logo"></a><span class="splash-description">Churaton staff Login.</span></div>
+            <div class="card-header text-center"><a href="#"><img class="logo-img" height="50" width="50" src="../../image/logo/logo3.png" alt="logo"></a><span class="splash-description">BFSL Admin</span></div>
             <div class="card-body">
             <div><?php echo $err;?></div>
                 <form method="post" accept-charset="UTF-8">
@@ -305,7 +304,7 @@ $outxxx = "";
             </div>
             <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
-                    <a href="signup.php" class="footer-link">Create An Account</a></div>
+                    <!-- <a href="signup.php" class="footer-link">Create An Account</a></div> -->
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="reset.php" class="footer-link">Forgot Password</a>
                 </div>

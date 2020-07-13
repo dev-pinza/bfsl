@@ -34,7 +34,7 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card">
-            <div class="card-header text-center"><img class="logo-img" height="40" width="50" src="../img/logo/logo.jpeg" alt="logo"><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><img class="logo-img" height="50" width="50" src="../../image/logo/logo3.png" alt="logo"><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body">
                 <form>
                     <p>Don't worry, we'll send you an email to reset your password.</p>
@@ -45,7 +45,7 @@
                 </form>
             </div>
             <div class="card-footer text-center">
-                <span>Don't have an account? <a href="signup.php">Sign Up</a></span>
+                <span>Don't have an account? <a href="index.php">Login</a></span>
             </div>
         </div>
     </div>
