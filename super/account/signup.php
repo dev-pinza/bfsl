@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Churaton Hotel | Signup</title>
+    <title>BFSL | Signup</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../design/x2/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="../design/x2/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">

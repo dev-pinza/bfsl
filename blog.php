@@ -41,7 +41,7 @@ include("header.php");
                 <!-- Blog Post 1 -->
                 <?php 
                 include("functions/db/connect.php");
-                $select_blog = mysqli_query($connection, "SELECT * FROM blog");
+                $select_blog = mysqli_query($connection, "SELECT * FROM blog ORDER BY id DESC");
                 while ($row = mysqli_fetch_array($select_blog)) {
                   ?>
                   <div class="col-lg-8 blog-selector">
